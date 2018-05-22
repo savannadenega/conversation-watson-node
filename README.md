@@ -51,7 +51,7 @@ npm install -g http-server
 Para rodar o servidor local, utilize o comando:
 
 ```
-http-server
+npm start
 ```
 
 Abrir o link abaixo no seu navegador preferido:
