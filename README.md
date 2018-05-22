@@ -4,6 +4,9 @@ Projeto com a utilização de Node.js e a API de Conversation do Watson-IBM.
 
 O contexto inicial do projeto é que o assistente de conversação ajude os alunos da Universidade Unisinos a chegar no ponto de destino determinado pelo aluno dentro do campus.
 
+- **Ideia de Protótipo Final do Projeto**
+
+![PrototipoFinal](readme-images/PrototipoFinal.jpg)
 
 ## Instalação e configuração do ambiente local
 
