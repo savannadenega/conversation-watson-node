@@ -2,27 +2,19 @@
 
 Projeto com a utilização de Node.js e a API de Conversation do Watson-IBM.
 
+Trabalho realizado para a cadeira de Inteligência Artificial Unisinos/2018.
 O contexto inicial do projeto é que o assistente de conversação ajude os alunos da Universidade Unisinos a chegar no ponto de destino determinado pelo aluno dentro do campus.
 
-- **Ideia de Protótipo Final do Projeto**
+Trabalho realizado por: Savanna Denega; Franciele Fagundes.
+
+**Ideia de Protótipo Final do Projeto**
 
 ![PrototipoFinal](readme_images/PrototipoFinal.jpg)
 
+
 ## Instalação e configuração do ambiente local
 
-Se você tem Windows e não possui o Git Bash instalado, clicar no link:
-[Download GIT](https://git-scm.com/download/win)
-
-#### Passo 1: configuração do GitHub
-
-Após o download, abrir o terminal do seu computador e inserir:
-
-```
-$ git config --global user.name "Fran"
-$ git config --global user.email fran@example.com
-```
-
-#### Passo 2: Clone do repositório do github
+#### Passo 1: Clone do repositório do github
 
 - Abra o terminal de seu computador
 - [Repositório Github](https://github.com/CamiCanali/workshop-juntos-na-ti)
@@ -32,7 +24,7 @@ $ git config --global user.email fran@example.com
 git clone https://github.com/savannadenega/conversation-watson-node
 ```
 
-#### Passo 3:
+#### Passo 2:
 
 **Requisitos, instale Node.js, no link abaixo:**
 
@@ -60,7 +52,7 @@ Abrir o link abaixo no seu navegador preferido:
 http://localhost:3000
 ```
 
-#### Passo 4:
+#### Passo 3:
 
 **Teste a aplicação:**
 
