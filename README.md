@@ -16,13 +16,7 @@ Trabalho realizado por: Savanna Denega; Franciele Fagundes.
 
 #### Passo 1: Clone do repositório do github
 
-- Abra o terminal de seu computador
-- [Repositório Github](https://github.com/CamiCanali/workshop-juntos-na-ti)
-- Acessando o link disponibilizado, faça o clone do repositório. Exemplo no código abaixo:
-
-```
-git clone https://github.com/savannadenega/conversation-watson-node
-```
+- Faça clone do repositório atual: `https://github.com/savannadenega/conversation-watson-node`
 
 #### Passo 2:
 
