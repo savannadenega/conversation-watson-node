@@ -6,7 +6,7 @@ O contexto inicial do projeto é que o assistente de conversação ajude os alun
 
 - **Ideia de Protótipo Final do Projeto**
 
-![PrototipoFinal](readme-images/PrototipoFinal.jpg)
+![PrototipoFinal](readme_images/PrototipoFinal.jpg)
 
 ## Instalação e configuração do ambiente local
 
