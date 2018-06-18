@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
   <base href="/">
@@ -9,32 +10,77 @@
   <meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/app.css">
+<!--
+  <script type='text/javascript' src="../js/OpenLayers2/OpenLayers.js"></script>
+  <script type='text/javascript' src="js/OpenLayers2/OpenLayers.js"></script>
+  <script type='text/javascript' src="/js/OpenLayers2/OpenLayers.js"></script>
+-->
+  <script type='text/javascript' src="OpenLayers.js"></script>
+
 </head>
-<body>
+<body onload="init();">
+
+  
+  <!-- botao lilas -->
   <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
     <img class="option full" src="../img/Chat Button.png">
     <img class="option not-full" src="../img/Code Button.png">
   </div>
+
+  <!-- tudo -->
   <div id="contentParent" class="responsive-columns-wrapper">
+
+    <div id="menu" class="responsive-column">
+      <div id="logo">
+        <img src="../img/Logo-Perdido-na-Uni.png"/>
+      </div>
+      <hr>
+      <p><a href="">Sobre</a></p>
+      <p><a href="">Contato</a></p>
+    </div>
+
+    <!-- parte da esquerda, onde tem o chat -->
     <div id="chat-column-holder" class="responsive-column content-column">
+
+      <!-- o chat em si, com padding gigante para esquerda e direita -->
       <div class="chat-column">
+
+        <!-- historico de conversa -->
         <div id="scrollingChat"></div>
+
+        <!-- onde se escreve a mensagem -->
         <label for="textInput" class="inputOutline">
           <input id="textInput" class="input responsive-column"
             placeholder="Type something" type="text"
             onkeydown="ConversationPanel.inputKeyDown(event, this)">
         </label>
-      </div>
-    </div>
-    <div id="payload-column" class="fixed-column content-column">
-      <div id="payload-initial-message">
-        Type something to see the output
-      </div>
-      <div id="payload-request" class="payload"></div>
-      <div id="payload-response" class="payload"></div>
-    </div>
-  </div>
 
+      </div>
+    </div>
+
+    <!-- class="responsive-column" -->
+    <div id="mapa" class="responsive-column">
+      
+      <div id="demoMap"></div>
+
+      <script type='text/javascript'>
+        function init() {
+          map = new OpenLayers.Map("demoMap");
+          var mapnik         = new OpenLayers.Layer.OSM();
+          var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+          var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+          var position       = new OpenLayers.LonLat(29.7947155,51.1552972).transform(fromProjection, toProjection);
+          var zoom           = 10; 
+
+          map.addLayer(mapnik);
+          map.setCenter(position, zoom );
+        }
+      </script>
+
+    </div>
+    
+  </div>
+ 
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
   <script src="js/conversation.js"></script>
