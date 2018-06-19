@@ -10,15 +10,11 @@
   <meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/app.css">
-<!--
-  <script type='text/javascript' src="../js/OpenLayers2/OpenLayers.js"></script>
-  <script type='text/javascript' src="js/OpenLayers2/OpenLayers.js"></script>
-  <script type='text/javascript' src="/js/OpenLayers2/OpenLayers.js"></script>
--->
-  <script type='text/javascript' src="OpenLayers.js"></script>
+
+
 
 </head>
-<body onload="init();">
+<body>
 
   
   <!-- botao lilas -->
@@ -27,9 +23,12 @@
     <img class="option not-full" src="../img/Code Button.png">
   </div>
 
-  <!-- tudo -->
+
+   <!-- tudo -->
   <div id="contentParent" class="responsive-columns-wrapper">
 
+
+    <!-- menu -->
     <div id="menu" class="responsive-column">
       <div id="logo">
         <img src="../img/Logo-Perdido-na-Uni.png"/>
@@ -58,29 +57,66 @@
       </div>
     </div>
 
-    <!-- class="responsive-column" -->
     <div id="mapa" class="responsive-column">
-      
-      <div id="demoMap"></div>
 
-      <script type='text/javascript'>
-        function init() {
-          map = new OpenLayers.Map("demoMap");
-          var mapnik         = new OpenLayers.Layer.OSM();
-          var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-          var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-          var position       = new OpenLayers.LonLat(29.7947155,51.1552972).transform(fromProjection, toProjection);
-          var zoom           = 10; 
+      <div id="map" style="width:550px;height:635px;"></div>
 
-          map.addLayer(mapnik);
-          map.setCenter(position, zoom );
+      <script>
+        function myMap() {
+          var redondoPonto6 = new google.maps.LatLng(-29.79482006,-51.15480757);
+          var caminhoPonto4 = new google.maps.LatLng(-29.795253,-51.15375614);
+          var ruaPonto5 = new google.maps.LatLng(-29.7972501,-51.15319824);
+        
+          var mapCanvas = document.getElementById("map");
+          var mapOptions = {center: caminhoPonto4, zoom: 18};
+          var map = new google.maps.Map(mapCanvas,mapOptions);
+        
+          var flightPath = new google.maps.Polyline({
+            path: [redondoPonto6, caminhoPonto4, ruaPonto5],
+            strokeColor: "#00B4A0",
+            strokeOpacity: 1.0,
+            strokeWeight: 5
+          });
+          flightPath.setMap(map);
+    
+          map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+    
+          var marker = new google.maps.Marker({position: ruaPonto5});
+          marker.setMap(map);
+          var marker2 = new google.maps.Marker({position: redondoPonto6, animation:google.maps.Animation.BOUNCE});
+          marker2.setMap(map);
+    
+          var infowindow = new google.maps.InfoWindow({
+            content: "Você está aqui"
+          });
+          infowindow.open(map,marker);
+          var infowindow2 = new google.maps.InfoWindow({
+            content: "Ponto final"
+          });
+          infowindow2.open(map,marker2);
+          
         }
       </script>
 
+
     </div>
+
     
   </div>
- 
+
+  <!-- parte do payload -->
+  <div id="payload-column" class="fixed-column content-column">
+    <div id="payload-initial-message">
+      Type something to see the output
+    </div>
+    <div id="payload-request" class="payload"></div>
+    <div id="payload-response" class="payload"></div>
+  </div>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoU8iJE6dQ-Saao8PHEoaoJoksnkGeDwc&callback=myMap"></script>
+  
+  
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
   <script src="js/conversation.js"></script>
