@@ -16,7 +16,7 @@ Trabalho realizado por: Savanna Denega; Franciele Fagundes.
 
 **Print da aplicação**
 
-![PrintDaAplicacao](readme_images/TelaAtual-POC-1.jpg)
+![PrintDaAplicacao](readme_images/TelaAtual-POC-1.png)
 
 
 ## Instalação e configuração do ambiente local
@@ -81,14 +81,14 @@ Realizamos duas POCs para a apresentação do projeto, em que o usuário insere 
 Local de destino: `redondo` (Centro Administrativo)
 Local de origem: `ginásio` (ginásio de esportes)
 
-![PrintDaAplicacao-POC-1](readme_images/TelaAtual-POC-1.jpg)
+![PrintDaAplicacao-POC-1](readme_images/TelaAtual-POC-1.png)
 
 * POC 2
 
 Local de destino: `Fratello` (restaurante Fratello)
 Local de origem: `D09104` (sala D09104)
 
-![PrintDaAplicacao-POC-2](readme_images/TelaAtual-POC-2.jpg)
+![PrintDaAplicacao-POC-2](readme_images/TelaAtual-POC-2.png)
 
 
 Como amostra, nós nos baseamos em uma mapa que a Unisinos já disponibiliza para os alunos se localizarem, no link: [Mapa da Unisinos de São Leopoldo](http://www.unisinos.br/mapa/localiza-se-campus-sao-leopoldo.php)
