@@ -1,6 +1,6 @@
 # Conversation Watson | Node 
 
-Projeto com a utilização de Node.js e a API Assistant do Watson|IBM.
+Projeto com a utilização de Node.js e a API Assistant do Watson | IBM.
 
 Trabalho realizado para a cadeira de Inteligência Artificial Unisinos/2018.
 O contexto inicial do projeto é que o assistente de conversação ajude os alunos da Universidade Unisinos a chegar no ponto de destino determinado pelo aluno dentro do campus a partir da rota demonstrada no mapa.
@@ -10,7 +10,7 @@ Trabalho realizado por: Savanna Denega; Franciele Fagundes.
 
 **Recursos utilizados:**
 
-* API Assistant do Watson|IBM
+* API Assistant do Watson | IBM
 * API Google Maps
 * Node.js
 
@@ -27,9 +27,7 @@ Faça clone do repositório atual: `https://github.com/savannadenega/conversatio
 
 ### Passo 2:
 
-Instale Node.js, realizando download do link abaixo:
-
-[Nodejs](https://nodejs.org/en/download/)
+Instale Node.js, realizando download no link: [Node.js](https://nodejs.org/en/download/)
 
 Após instalados os requisitos, você precisa abrir o terminal e chegar 
 até a pasta em que fez o clone do repositório via cmd,
@@ -53,9 +51,9 @@ Abrir o link abaixo no seu navegador preferido:
 http://localhost:3000
 ```
 
-### * Passo 3:
+### Passo 3:
 
-**Teste do chatbot**
+**Testes do chatbot**
 
 Após o app ser instalado e estar rodando, experimente fazer perguntas e ver como ele responde.
 
