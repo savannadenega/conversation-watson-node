@@ -1,15 +1,22 @@
 # Conversation Watson | Node 
 
-Projeto com a utilização de Node.js e a API de Conversation do Watson-IBM.
+Projeto com a utilização de Node.js e a API Assistant do Watson|IBM.
 
 Trabalho realizado para a cadeira de Inteligência Artificial Unisinos/2018.
-O contexto inicial do projeto é que o assistente de conversação ajude os alunos da Universidade Unisinos a chegar no ponto de destino determinado pelo aluno dentro do campus.
+O contexto inicial do projeto é que o assistente de conversação ajude os alunos da Universidade Unisinos a chegar no ponto de destino determinado pelo aluno dentro do campus a partir da rota demonstrada no mapa.
+A ideia é que o chatbot consiga reconhecer os locais passados de acordo com o vocabulário que utilizamos dentro do campus, com os apelidos dos locais utilizados pelos alunos.
 
 Trabalho realizado por: Savanna Denega; Franciele Fagundes.
 
-**Ideia de Protótipo Final do Projeto**
+**Recursos utilizados:**
 
-![PrototipoFinal](readme_images/PrototipoFinal.jpg)
+* API Assistant do Watson|IBM
+* API Google Maps
+* Node.js
+
+**Print da aplicação**
+
+![PrintDaAplicacao](readme_images/TelaAtual-POC-1.jpg)
 
 
 ## Instalação e configuração do ambiente local
@@ -48,11 +55,11 @@ http://localhost:3000
 
 #### Passo 3:
 
-**Teste a aplicação:**
+**Teste do chatbot**
 
 Após o app ser instalado e estar rodando, experimente fazer perguntas e ver como ele responde.
 
-A interface do chat fica na esquerda, e o JSON que o código JavaScript está recebendo da conversação fica na direita.
+A interface do chat fica na esquerda, e o JSON que o código JavaScript está recebendo da conversação abaixo.
 As questões e os comandos são interpretados usando um pequeno exemplo de dados treinados seguindo os seguintes intenções:
 
 #saudacaoInicial
@@ -60,10 +67,31 @@ As questões e os comandos são interpretados usando um pequeno exemplo de dados
 #localDestino
 #localOrigem
 #saudacaoFinal
+#voltarInicioConversa
 
-Escreva para onde deseja ir, como "quero ir para o ginásio", depois responda onde é a sua posição atual atual como "estou na biblioteca".
-O sistema vai entender suas intenções e repondê-las, na ordem adequada. Você pode olhar os detalhes de como os inputs são entendido pelo Watson examinando o JSON na seção à direita `Watson understands`.
-Modelo de localização utilizado do atual [Mapa da Unisinos de São Leopoldo](http://www.unisinos.br/mapa/localiza-se-campus-sao-leopoldo.php)
+Escreva para onde deseja ir, no exemplo "quero ir para o ginásio", depois responda onde é a sua posição atual atual como "estou na biblioteca".
+O sistema vai entender suas intenções e repondê-las, na ordem adequada. Você pode olhar os detalhes de como os inputs são entendidos pelo Watson examinando o JSON no payload na parte `Watson understands`.
+
+**Testes Aplicação Final**
+
+Realizamos duas POCs para a apresentação do projeto, em que o usuário insere as informações no chat de onde deseja ir e onde está, e então o mapa com a rota do trajeto é gerado e apresentada na tela.
+
+* POC 1
+
+Local de destino: `redondo` (Centro Administrativo)
+Local de origem: `ginásio` (ginásio de esportes)
+
+![PrintDaAplicacao-POC-1](readme_images/TelaAtual-POC-1.jpg)
+
+* POC 2
+
+Local de destino: `Fratello` (restaurante Fratello)
+Local de origem: `D09104` (sala D09104)
+
+![PrintDaAplicacao-POC-2](readme_images/TelaAtual-POC-2.jpg)
+
+
+Como amostra, nós nos baseamos em uma mapa que a Unisinos já disponibiliza para os alunos se localizarem, no link: [Mapa da Unisinos de São Leopoldo](http://www.unisinos.br/mapa/localiza-se-campus-sao-leopoldo.php)
 
 
 #### Código base retirado do projeto Open Source da IBM Watson:
