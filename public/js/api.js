@@ -23,9 +23,29 @@ var Api = (function() {
     },
     setResponsePayload: function(newPayloadStr) {
       responsePayload = JSON.parse(newPayloadStr);
+    },
+    locals:{
+      local_origem: null,
+      local_destino: null
     }
   };
+  
+  function getContextVars(request){
+    console.log("request",request);
+    if(request.context.hasOwnProperty("local_destino")){
+      Api.locals.local_destino = request.context.local_destino;
+      console.log(true)
+    
+      if(request.context.hasOwnProperty("local_origem")){
+        Api.locals.local_origem = request.context.local_origem;
+        console.log(true)
+        //debugger;
+        MapRouting.loadMapRouting(Api.locals.local_destino, Api.locals.local_origem);
 
+      }
+    }
+  }
+  
   // Send a message request to the server
   function sendRequest(text, context) {
     // Build request payload
@@ -45,6 +65,7 @@ var Api = (function() {
     http.setRequestHeader('Content-type', 'application/json');
     http.onreadystatechange = function() {
       if (http.readyState === 4 && http.status === 200 && http.responseText) {
+        getContextVars(JSON.parse(http.responseText));
         Api.setResponsePayload(http.responseText);
       }
     };
@@ -56,7 +77,6 @@ var Api = (function() {
     if (Object.getOwnPropertyNames(payloadToWatson).length !== 0) {
       Api.setRequestPayload(params);
     }
-
     // Send request
     http.send(params);
   }

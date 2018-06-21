@@ -11,12 +11,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/app.css">
 
-
-
 </head>
 <body>
 
-  
   <!-- botao lilas -->
   <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
     <img class="option full" src="../img/Chat Button.png">
@@ -43,10 +40,9 @@
 
       <!-- o chat em si, com padding gigante para esquerda e direita -->
       <div class="chat-column">
-
         <!-- historico de conversa -->
         <div id="scrollingChat"></div>
-
+        
         <!-- onde se escreve a mensagem -->
         <label for="textInput" class="inputOutline">
           <input id="textInput" class="input responsive-column"
@@ -61,46 +57,7 @@
 
       <div id="map" style="width:550px;height:635px;"></div>
 
-      <script>
-        function myMap() {
-          var redondoPonto6 = new google.maps.LatLng(-29.79482006,-51.15480757);
-          var caminhoPonto4 = new google.maps.LatLng(-29.795253,-51.15375614);
-          var ruaPonto5 = new google.maps.LatLng(-29.7972501,-51.15319824);
-        
-          var mapCanvas = document.getElementById("map");
-          var mapOptions = {center: caminhoPonto4, zoom: 18};
-          var map = new google.maps.Map(mapCanvas,mapOptions);
-        
-          var flightPath = new google.maps.Polyline({
-            path: [redondoPonto6, caminhoPonto4, ruaPonto5],
-            strokeColor: "#00B4A0",
-            strokeOpacity: 1.0,
-            strokeWeight: 5
-          });
-          flightPath.setMap(map);
-    
-          map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
-    
-          var marker = new google.maps.Marker({position: ruaPonto5});
-          marker.setMap(map);
-          var marker2 = new google.maps.Marker({position: redondoPonto6, animation:google.maps.Animation.BOUNCE});
-          marker2.setMap(map);
-    
-          var infowindow = new google.maps.InfoWindow({
-            content: "Você está aqui"
-          });
-          infowindow.open(map,marker);
-          var infowindow2 = new google.maps.InfoWindow({
-            content: "Ponto final"
-          });
-          infowindow2.open(map,marker2);
-          
-        }
-      </script>
-
-
     </div>
-
     
   </div>
 
@@ -114,13 +71,15 @@
   </div>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoU8iJE6dQ-Saao8PHEoaoJoksnkGeDwc&callback=myMap"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoU8iJE6dQ-Saao8PHEoaoJoksnkGeDwc&callback=myMap"></script> -->
   
   
   <script src="js/common.js"></script>
+  <script src="js/map.js"></script>
   <script src="js/api.js"></script>
   <script src="js/conversation.js"></script>
   <script src="js/payload.js"></script>
   <script src="js/global.js"></script>
+  <script src="js/loadFirstMap.js"></script>
 </body>
 </html>

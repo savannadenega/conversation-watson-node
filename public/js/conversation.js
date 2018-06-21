@@ -3,13 +3,15 @@
 /* eslint no-unused-vars: "off" */
 /* global Api: true, Common: true*/
 
+// construtor do painel da conversacao
 var ConversationPanel = (function() {
   var settings = {
+    //seletores a apartir do front
     selectors: {
-      chatBox: '#scrollingChat',
-      fromUser: '.from-user',
-      fromWatson: '.from-watson',
-      latest: '.latest'
+      chatBox: '#scrollingChat',  //css
+      fromUser: '.from-user',     //css
+      fromWatson: '.from-watson', //css
+      latest: '.latest'           //css
     },
     authorTypes: {
       user: 'user',
@@ -17,7 +19,7 @@ var ConversationPanel = (function() {
     }
   };
 
-  // Publicly accessible methods defined
+  // metodos publicamente acessiveis definidos
   return {
     init: init,
     inputKeyDown: inputKeyDown
@@ -29,8 +31,11 @@ var ConversationPanel = (function() {
     Api.sendRequest( '', null );
     setupInputBox();
   }
+
   // Set up callbacks on payload setters in Api module
   // This causes the displayMessage function to be called when messages are sent / received
+  // Configurar retornos de chamada em setters de payload no módulo Api
+  // Isso faz com que a função displayMessage seja chamada quando as mensagens são enviadas / recebidas
   function chatUpdateSetup() {
     var currentRequestPayloadSetter = Api.setRequestPayload;
     Api.setRequestPayload = function(newPayloadStr) {
@@ -45,20 +50,24 @@ var ConversationPanel = (function() {
     };
   }
 
-// Set up the input box to underline text as it is typed
+  // Set up the input box to underline text as it is typed
   // This is done by creating a hidden dummy version of the input box that
   // is used to determine what the width of the input text should be.
   // This value is then used to set the new width of the visible input box.
+  // Configure a caixa de entrada para sublinhar o texto conforme ele é digitado
+  // Isso é feito criando uma versão fictícia oculta da caixa de entrada que
+  // é usado para determinar qual deve ser a largura do texto de entrada.
+  // Esse valor é usado para definir a nova largura da caixa de entrada visível.
   function setupInputBox() {
-    var input = document.getElementById('textInput');
-    var dummy = document.getElementById('textInputDummy');
+    var input = document.getElementById('textInput');       //elemento html
+    var dummy = document.getElementById('textInputDummy');  //tenta achar o nome css no html - dummy === manequim
     var minFontSize = 14;
     var maxFontSize = 16;
     var minPadding = 4;
     var maxPadding = 6;
 
     // If no dummy input box exists, create one
-    if (dummy === null) {
+    if (dummy === null) { //se nao achou o nome css no html, determina um no html
       var dummyJson = {
         'tagName': 'div',
         'attributes': [{
@@ -220,9 +229,12 @@ var ConversationPanel = (function() {
       // Send the user message
       Api.sendRequest(inputBox.value, context);
 
+
+
       // Clear input box for further messages
       inputBox.value = '';
       Common.fireEvent(inputBox, 'input');
     }
   }
+
 }());

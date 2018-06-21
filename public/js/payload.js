@@ -97,8 +97,7 @@ var PayloadPanel = (function() {
   // Constructs new DOM element to use in displaying the payload
   function buildPayloadDomElement(isRequest) {
     var payloadPrettyString = jsonPrettyPrint(isRequest
-            ? Api.getRequestPayload() : Api.getResponsePayload());
-
+      ? Api.getRequestPayload() : Api.getResponsePayload());
     var payloadJson = {
       'tagName': 'div',
       'children': [{
@@ -123,7 +122,6 @@ var PayloadPanel = (function() {
         }]
       }]
     };
-
     return Common.buildDomElement(payloadJson);
   }
 

@@ -61,6 +61,7 @@ div {
   -ms-flex: 1;
   flex: 1;
   overflow: auto;
+  max-height: 635px;
 }
 
 #chat-column-holder {
