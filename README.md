@@ -21,13 +21,13 @@ Trabalho realizado por: Savanna Denega; Franciele Fagundes.
 
 ## Instalação e configuração do ambiente local
 
-#### * Passo 1: Clone do repositório do github
+### Passo 1: Clone do repositório do github
 
-- Faça clone do repositório atual: `https://github.com/savannadenega/conversation-watson-node`
+Faça clone do repositório atual: `https://github.com/savannadenega/conversation-watson-node`
 
-#### * Passo 2:
+### Passo 2:
 
-**Requisitos, instale Node.js, no link abaixo:**
+Instale Node.js, realizando download do link abaixo:
 
 [Nodejs](https://nodejs.org/en/download/)
 
@@ -53,7 +53,7 @@ Abrir o link abaixo no seu navegador preferido:
 http://localhost:3000
 ```
 
-#### * Passo 3:
+### * Passo 3:
 
 **Teste do chatbot**
 
@@ -73,6 +73,7 @@ As questões e os comandos são interpretados usando um pequeno exemplo de dados
 
 Escreva para onde deseja ir, no exemplo "quero ir para o ginásio", depois responda onde é a sua posição atual atual como "estou na biblioteca".
 O sistema vai entender suas intenções e repondê-las, na ordem adequada. Você pode olhar os detalhes de como os inputs são entendidos pelo Watson examinando o JSON no payload na parte `Watson understands`.
+
 
 **Testes Aplicação Final**
 
