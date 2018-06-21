@@ -21,11 +21,11 @@ Trabalho realizado por: Savanna Denega; Franciele Fagundes.
 
 ## Instalação e configuração do ambiente local
 
-#### Passo 1: Clone do repositório do github
+#### * Passo 1: Clone do repositório do github
 
 - Faça clone do repositório atual: `https://github.com/savannadenega/conversation-watson-node`
 
-#### Passo 2:
+#### * Passo 2:
 
 **Requisitos, instale Node.js, no link abaixo:**
 
@@ -53,7 +53,7 @@ Abrir o link abaixo no seu navegador preferido:
 http://localhost:3000
 ```
 
-#### Passo 3:
+#### * Passo 3:
 
 **Teste do chatbot**
 
@@ -62,12 +62,14 @@ Após o app ser instalado e estar rodando, experimente fazer perguntas e ver com
 A interface do chat fica na esquerda, e o JSON que o código JavaScript está recebendo da conversação abaixo.
 As questões e os comandos são interpretados usando um pequeno exemplo de dados treinados seguindo os seguintes intenções:
 
-#saudacaoInicial
-#saudacaoInicialAtual
-#localDestino
-#localOrigem
-#saudacaoFinal
-#voltarInicioConversa
+```
+#saudacaoInicial  
+#saudacaoInicialAtual  
+#localDestino  
+#localOrigem  
+#saudacaoFinal  
+#voltarInicioConversa  
+```
 
 Escreva para onde deseja ir, no exemplo "quero ir para o ginásio", depois responda onde é a sua posição atual atual como "estou na biblioteca".
 O sistema vai entender suas intenções e repondê-las, na ordem adequada. Você pode olhar os detalhes de como os inputs são entendidos pelo Watson examinando o JSON no payload na parte `Watson understands`.
@@ -78,14 +80,14 @@ Realizamos duas POCs para a apresentação do projeto, em que o usuário insere 
 
 * POC 1
 
-Local de destino: `redondo` (Centro Administrativo)
+Local de destino: `redondo` (Centro Administrativo)  
 Local de origem: `ginásio` (ginásio de esportes)
 
 ![PrintDaAplicacao-POC-1](readme_images/TelaAtual-POC-1.png)
 
 * POC 2
 
-Local de destino: `Fratello` (restaurante Fratello)
+Local de destino: `Fratello` (restaurante Fratello)  
 Local de origem: `D09104` (sala D09104)
 
 ![PrintDaAplicacao-POC-2](readme_images/TelaAtual-POC-2.png)
